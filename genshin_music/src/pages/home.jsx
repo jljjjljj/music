@@ -26,7 +26,7 @@ export default function Home() {
           <Navbar />
         </Sider>
         <Layout>
-          <Header style={commonStyle}>Header</Header>
+          <Header style={commonStyle}></Header>
           <Content style={{ height: 300, lineHeight: "300px" }}>
             Content
           </Content>
