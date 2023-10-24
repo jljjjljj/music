@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "@douyinfe/semi-ui";
 import Navbar from "../components/Navbar";
+import Title from "../components/Title";
 
 export default function Home() {
   const onbreakpoint = (screen, bool) => {
     console.log(screen, bool);
   };
   const commonStyle = {
-    height: 64,
+    height: "100%",
     lineHeight: "64px",
-    background: "var(--semi-color-fill-0)",
+    backgroundImage: "url(/img/bg.png)",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   };
   const { Header, Footer, Sider, Content } = Layout;
   return (
@@ -18,7 +21,6 @@ export default function Home() {
         <Sider
           style={{
             background: "var(--semi-color-fill-2)",
-            height: "100vh",
           }}
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
@@ -26,11 +28,13 @@ export default function Home() {
           <Navbar />
         </Sider>
         <Layout>
-          <Header style={commonStyle}></Header>
-          <Content style={{ height: 300, lineHeight: "300px" }}>
-            Content
-          </Content>
-          <Footer style={commonStyle}>Footer</Footer>
+          <Header style={commonStyle}>
+            <div>
+              <Title />
+            </div>
+          </Header>
+
+          {/* <Footer style={commonStyle}>Footer</Footer> */}
         </Layout>
       </Layout>
     </div>

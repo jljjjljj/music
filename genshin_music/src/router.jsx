@@ -9,7 +9,7 @@ const routers = createBrowserRouter([
     element: <Home />,
     errorElement: (
       <p>
-        <strong>Please input login in the address bar!</strong>
+        <strong>别急!</strong>
       </p>
     ),
   },

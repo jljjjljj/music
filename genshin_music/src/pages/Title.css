@@ -1,0 +1,30 @@
+@keyframes slide-in {
+    0% {
+      transform: translateX(-100%); /* 初始位置在左侧（左边缘之外） */
+      opacity: 0; /* 初始透明度为0 */
+    }
+    100% {
+      transform: translateX(0); /* 最终位置在原始位置 */
+      opacity: 1; /* 最终透明度为1 */
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  .title-wrapper {
+    animation: slide-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 应用从左到右弹出动画，0.5s表示动画持续0.5秒，cubic-bezier用于控制动画速度曲线 */
+  }
+  .title-wrapper1 {
+    animation: fade-in 3s; /* 应用渐变动画，1s表示动画持续1秒 */
+  }
+  
+  
+  
