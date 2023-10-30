@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "@douyinfe/semi-ui";
 import Navbar from "../components/Navbar";
-import Title from "../components/Title";
-
+import Searchbar from "../components/Searchbar";
 export default function Home() {
   const onbreakpoint = (screen, bool) => {
     console.log(screen, bool);
@@ -21,6 +20,7 @@ export default function Home() {
         <Sider
           style={{
             background: "var(--semi-color-fill-2)",
+            height: "100vh",
           }}
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
@@ -29,9 +29,7 @@ export default function Home() {
         </Sider>
         <Layout>
           <Header style={commonStyle}>
-            <div>
-              <Title />
-            </div>
+            <Searchbar />
           </Header>
 
           {/* <Footer style={commonStyle}>Footer</Footer> */}
