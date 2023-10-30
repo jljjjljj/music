@@ -1,0 +1,25 @@
+.banner {
+    width: 20%;
+
+    height: 100vh;
+}
+.bg1 {
+    background-image: url("img/md.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg2 {
+    background-image: url("img/ly.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg3 {
+    background-image: url("img/dq.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg4 {
+    background-image: url("img/xm.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

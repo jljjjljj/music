@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import Chat from "./pages/chat";
-
+import Subpage from "./pages/subpage";
 const routers = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +16,10 @@ const routers = createBrowserRouter([
   {
     path: "/chat",
     element: <Chat />,
+  },
+  {
+    path: "/divide",
+    element: <Subpage />,
   },
 ]);
 export default routers;
