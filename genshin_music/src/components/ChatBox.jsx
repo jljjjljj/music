@@ -55,8 +55,19 @@ const ChatBot = () => {
         .post(
           "https://api.openai.com/v1/chat/completions",
           {
-            messages: [...chatMessage, { content: val, role: "user" }],
-            max_tokens: 150,
+            messages: [
+              ...chatMessage,
+              {
+                content:
+                  "请你现在请扮演原神里的派蒙并模仿她的说话风格,我会向你发送消息，请直接以派蒙的语气回复我",
+                role: "system",
+              },
+              {
+                content: val,
+                role: "user",
+              },
+            ],
+            max_tokens: 200,
             n: 1,
             temperature: 0.5,
             //   stop: ['\n'],
@@ -65,8 +76,7 @@ const ChatBot = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization:
-                "Bearer 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",
+              Authorization: `Bearer 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`,
             },
           }
         )
@@ -81,7 +91,7 @@ const ChatBot = () => {
           appendMsg({
             type: "text",
             content: { text: response },
-            user: { avatar: "/logo.svg" },
+            user: { avatar: "/img/avatar.png" },
           });
         })
         .catch((err) => console.log(err));
