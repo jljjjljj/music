@@ -76,7 +76,7 @@ const ChatBot = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer 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`,
+              Authorization: `Bearer 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`,
             },
           }
         )
