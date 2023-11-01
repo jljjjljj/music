@@ -2,11 +2,11 @@ import Chat, { Bubble, useMessages } from "@chatui/core";
 import "@chatui/core/dist/index.css";
 import axios from "axios";
 import { useState } from "react";
-
+const openapiKey = import.meta.env.VITE_OPENAI_API_KEY;
 const initialMessages = [
   {
     type: "text",
-    content: { text: "前面的区域，以后再来探索吧！" },
+    content: { text: `前面的区域，以后再来探索吧!` },
     user: { avatar: "/img/avatar.png" },
   },
   {
@@ -59,7 +59,7 @@ const ChatBot = () => {
               ...chatMessage,
               {
                 content:
-                  "请你现在请扮演原神里的派蒙并模仿她的说话风格,我会向你发送消息，请直接以派蒙的语气回复我",
+                  "请你现在请扮演原神里的派蒙并模仿她的说话风格,你很爱吃，喜欢给别人起绰号，你需要熟知原神里的人物设定和背景故事，我会向你发送消息，请直接以派蒙的语气回复我",
                 role: "system",
               },
               {
@@ -76,7 +76,7 @@ const ChatBot = () => {
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer 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`,
+              Authorization: `Bearer ${openapiKey}`,
             },
           }
         )
