@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "@douyinfe/semi-ui";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
+import Homerecommend from "../components/homerecommend";
+import { Container, Box } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 export default function Home() {
   const onbreakpoint = (screen, bool) => {
     console.log(screen, bool);
@@ -30,6 +33,24 @@ export default function Home() {
         <Layout>
           <Header style={commonStyle}>
             <Searchbar />
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                style={{
+                  backgroundColor: "white",
+                  width: "95%",
+                  height: "100%",
+                }}
+              >
+                <Homerecommend />
+              </Box>
+            </div>
           </Header>
 
           {/* <Footer style={commonStyle}>Footer</Footer> */}
