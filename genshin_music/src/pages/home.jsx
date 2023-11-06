@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "@douyinfe/semi-ui";
 import Navbar from "../components/Navbar";
 import Searchbar from "../components/Searchbar";
-import Homerecommend from "../components/homerecommend";
+import Homerecommend from "../components/Homerecommend";
 import { Container, Box } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
                 style={{
                   backgroundColor: "white",
                   width: "95%",
-                  height: "80vh",
+                  height: "100%",
                   marginTop: "40px",
                   borderRadius: "20px",
                   boxShadow: "3px 3px 30px 10px #4b4b4b59",

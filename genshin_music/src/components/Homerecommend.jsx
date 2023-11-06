@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Grid } from "@mui/material";
+import Table from "./table";
+import Tablemusic from "./table";
 const PlaylistItem = ({ imageUrl, playlistName }) => (
   <div>
     <ul
@@ -105,8 +107,7 @@ const Homerecommend = () => {
           />
         </div>
       </Container>
-
-      {tracks.map((track) => track.name)}
+      <Tablemusic rows={tracks} />
     </>
   );
 };
