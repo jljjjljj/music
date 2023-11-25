@@ -7,7 +7,9 @@ import { Container, Box } from "@mui/material";
 export default function Song_list() {
   const location = useLocation();
   const listitem = location.state.tracks;
+  const collection = location.state.collection;
   console.log(listitem);
+  console.log(collection);
   const onbreakpoint = (screen, bool) => {
     console.log(screen, bool);
   };

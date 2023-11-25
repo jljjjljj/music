@@ -73,15 +73,11 @@ export default function Tablemusic(props) {
   return (
     <>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <Table sx={{}} aria-label="customized table">
           <TableHead>
             <TableRow>
               <StyledTableCell>歌曲</StyledTableCell>
-              <StyledTableCell align="right">
-                <Link to={"/"}>
-                  <Button variant="contained">返回</Button>
-                </Link>
-              </StyledTableCell>
+              <StyledTableCell align="right">专辑</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -105,7 +101,8 @@ export default function Tablemusic(props) {
                   )}
                   {row.name}
                 </StyledTableCell>
-                <StyledTableCell align="right">1</StyledTableCell>
+
+                <StyledTableCell align="right"> {row.al.name}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

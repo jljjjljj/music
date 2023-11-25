@@ -49,17 +49,22 @@ const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
 const Homerecommend = () => {
   const [playlistDetail, setPlaylistDetail] = useState([]);
   const [tracks, setTracks] = useState([]);
+  const [collection, setCollection] = useState([]);
   const [playlistDetail1, setPlaylistDetail1] = useState([]);
   const [tracks2, setTracks2] = useState([]);
   const [playlistDetail2, setPlaylistDetail2] = useState([]);
   const [tracks3, setTracks3] = useState([]);
   const [playlistDetail3, setPlaylistDetail3] = useState([]);
   const [tracks4, setTracks4] = useState([]);
+  const [playlistDetail4, setPlaylistDetail4] = useState([]);
+  const [tracks5, setTracks5] = useState([]);
 
   const navigate = useNavigate(); // 获取 useNavigate 函数
   const handlePlaylistClick = () => {
     // 在这里进行页面导航
-    navigate("/songlist", { state: { tracks: tracks } });
+    navigate("/songlist", {
+      state: { tracks: tracks },
+    });
   };
   const handlePlaylistClick1 = () => {
     // 在这里进行页面导航
@@ -73,13 +78,18 @@ const Homerecommend = () => {
     // 在这里进行页面导航
     navigate("/songlist", { state: { tracks: tracks4 } });
   };
+  const handlePlaylistClick4 = () => {
+    // 在这里进行页面导航
+    navigate("/songlist", { state: { tracks: tracks5 } });
+  };
 
   useEffect(() => {
     // 构建API请求的URL
-    const apiUrl = "http://localhost:3000/playlist/detail?id=6817959304";
+    const apiUrl = "http://localhost:3000/playlist/detail?id=7440326502";
     const apiUrl1 = "http://localhost:3000/playlist/detail?id=7378805635";
     const apiUrl2 = "http://localhost:3000/playlist/detail?id=7437331292";
     const apiUrl3 = "http://localhost:3000/playlist/detail?id=7260028404";
+    const apiUrl4 = "http://localhost:3000/playlist/detail?id=7822788988";
     // 发送GET请求
     // 使用Promise.all同时发送多个请求
     Promise.all([
@@ -87,15 +97,17 @@ const Homerecommend = () => {
       axios.get(apiUrl1),
       axios.get(apiUrl2),
       axios.get(apiUrl3),
+      axios.get(apiUrl4),
     ])
       .then((responses) => {
         // 处理API响应数据
-        const [response1, response2, response3, response4] = responses;
+        const [response1, response2, response3, response4, response5] =
+          responses;
         setPlaylistDetail(response1.data.playlist);
         setPlaylistDetail1(response2.data.playlist);
         setPlaylistDetail2(response3.data.playlist);
         setPlaylistDetail3(response4.data.playlist);
-        console.log(playlistDetail);
+        setPlaylistDetail4(response5.data.playlist);
 
         // 提取 tracks 值并存储在 tracks 变量中
         const extractedTracks = Object.values(response1.data.playlist.tracks);
@@ -106,12 +118,15 @@ const Homerecommend = () => {
         setTracks3(extractedTracks3);
         const extractedTracks4 = Object.values(response4.data.playlist.tracks);
         setTracks4(extractedTracks4);
+        const extractedTracks5 = Object.values(response5.data.playlist.tracks);
+        setTracks5(extractedTracks5);
       })
       .catch((error) => {
         console.error("API请求失败", error);
       });
   }, []);
   console.log(tracks);
+
   return (
     <>
       <div
@@ -154,6 +169,13 @@ const Homerecommend = () => {
             imageUrl="/img/re4.png"
             playlistName={playlistDetail3.name}
             onClick={handlePlaylistClick3}
+          />
+        </div>
+        <div style={{ marginLeft: "60px" }}>
+          <PlaylistItem
+            imageUrl="/img/re5.png"
+            playlistName={playlistDetail4.name}
+            onClick={handlePlaylistClick4}
           />
         </div>
       </Container>

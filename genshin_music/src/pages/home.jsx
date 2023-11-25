@@ -44,8 +44,8 @@ export default function Home() {
               <Box
                 style={{
                   backgroundColor: "white",
-                  width: "95%",
-                  height: "100%",
+                  width: "98%",
+                  height: "80vh",
                   marginTop: "40px",
                   borderRadius: "20px",
                   boxShadow: "3px 3px 30px 10px #4b4b4b59",
