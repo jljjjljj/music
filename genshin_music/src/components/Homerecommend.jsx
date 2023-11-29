@@ -148,40 +148,43 @@ const Homerecommend = () => {
         <span style={{ color: "black", marginLeft: "5px" }}>推荐</span>
       </div>
       <Container style={{ display: "flex", marginLeft: "10px" }}>
+    
         <PlaylistItem
           imageUrl="/img/re1.png"
           playlistName={playlistDetail.name}
           onClick={handlePlaylistClick}
         />
+      
+     
 
-        <div style={{ marginLeft: "60px"}}>
+    
           <PlaylistItem
             imageUrl="/img/re2.png"
             playlistName={playlistDetail1.name}
             onClick={handlePlaylistClick1}
           />
-        </div>
-        <div style={{ marginLeft: "60px" }}>
+      
+        
           <PlaylistItem
             imageUrl="/img/re3.png"
             playlistName={playlistDetail2.name}
             onClick={handlePlaylistClick2}
           />
-        </div>
-        <div style={{ marginLeft: "60px" }}>
+      
+     
           <PlaylistItem
             imageUrl="/img/re4.png"
             playlistName={playlistDetail3.name}
             onClick={handlePlaylistClick3}
           />
-        </div>
-        <div style={{ marginLeft: "60px" }}>
+      
+       
           <PlaylistItem
             imageUrl="/img/re5.png"
             playlistName={playlistDetail4.name}
             onClick={handlePlaylistClick4}
           />
-        </div>
+       
       </Container>
     </>
   );

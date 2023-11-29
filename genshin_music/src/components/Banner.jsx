@@ -29,7 +29,10 @@ const Carousel1=() => {
     const imgList = [
         'https://img.zcool.cn/community/015c4062457ac80002c4212c17a2c1.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100/quality,q_100',
         'https://img0.baidu.com/it/u=3661980334,4153538222&fm=253&fmt=auto&app=120&f=JPEG?w=1428&h=800',
-        'https://p8.itc.cn/images01/20210416/9879348ce83c4aedb5c200123cea4465.jpeg',
+        'https://pbs.twimg.com/media/FDasb4KXIBYmYY7?format=jpg&name=large',
+        'https://img-baofun.zhhainiao.com/pcwallpaper_ugc/static/f5426d004f1fe3ad35791c1089dd1f54.png?x-oss-process=image%2fresize%2cm_lfit%2cw_1920%2ch_1080',
+        'https://pbs.twimg.com/media/F_6YhluXkAAfOyy?format=jpg&name=large',
+        
     
     ];
 
@@ -48,7 +51,7 @@ const Carousel1=() => {
                     return (
                         <div key={index} style={{ backgroundSize: 'cover', backgroundImage: `url(${src})` }}>
                             <Space vertical align='start' spacing='medium' style={titleStyle}>
-                                {renderLogo()}
+                                {/* {renderLogo()} */}
                                 {/* <Title heading={2} style={colorStyle}>{textList[index][0]}</Title> */}
                                 <Space vertical align='start'>
                                     {/* <Paragraph style={colorStyle}>{textList[index][1]}</Paragraph>
