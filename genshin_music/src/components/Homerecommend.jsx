@@ -3,17 +3,20 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Container, Grid } from "@mui/material";
 import Table from "./table";
+import Carousel1 from "./Banner";
 import Tablemusic from "./table";
 import { Link } from "react-router-dom";
+
 
 const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
   const [flag, setFlag] = useState(false);
   return (
-    <div>
+    <div style={{width:'180px', height:'220px',overflow:'hidden'}}>
       <ul
         style={{
-          width: "150px",
-          height: "190px",
+          marginLeft:'10px',
+          width: "65%",
+          height: "65%",
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: "cover",
           borderRadius: "20px",
@@ -36,7 +39,7 @@ const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
           marginTop: "10px",
           height: "20px",
           lineHeight: "20px",
-          fontSize: "14px",
+          fontSize: "13px",
           fontWeight: "700",
           color: flag ? "#53d0c7" : "black",
         }}
@@ -129,6 +132,7 @@ const Homerecommend = () => {
 
   return (
     <>
+    <Carousel1 />
       <div
         style={{
           marginLeft: "35px",
@@ -150,7 +154,7 @@ const Homerecommend = () => {
           onClick={handlePlaylistClick}
         />
 
-        <div style={{ marginLeft: "60px" }}>
+        <div style={{ marginLeft: "60px"}}>
           <PlaylistItem
             imageUrl="/img/re2.png"
             playlistName={playlistDetail1.name}
