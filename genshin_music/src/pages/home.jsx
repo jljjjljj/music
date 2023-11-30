@@ -23,11 +23,12 @@ export default function Home() {
         <Sider
           style={{
             background: "var(--semi-color-fill-2)",
-            height: "100vh",
+            height: "auto",
           }}
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
         >
+          
           <Navbar />
         </Sider>
         <Layout>
@@ -45,13 +46,15 @@ export default function Home() {
                 style={{
                   backgroundColor: "white",
                   width: "98%",
-                  height: "80vh",
+                  height: "1000px",
                   marginTop: "40px",
                   borderRadius: "20px",
                   boxShadow: "3px 3px 30px 10px #4b4b4b59",
                 }}
               >
                 <Homerecommend />
+
+                
               </Box>
             </div>
           </Header>

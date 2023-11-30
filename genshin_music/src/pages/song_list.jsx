@@ -27,7 +27,8 @@ export default function Song_list() {
         <Sider
           style={{
             background: "var(--semi-color-fill-2)",
-            height: "100vh",
+            height: "auto",
+            
           }}
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
@@ -47,7 +48,7 @@ export default function Song_list() {
                 style={{
                   backgroundColor: "white",
                   width: "95%",
-                  height: "100%",
+                  height: "780px",
                   marginTop: "40px",
                   borderRadius: "20px",
                   boxShadow: "3px 3px 30px 10px #4b4b4b59",

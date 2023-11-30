@@ -98,9 +98,10 @@ export default function Navbar() {
   return (
     <Nav
       style={{
+        
         height: "100%",
-        // backgroundColor: "#ecf7ec",
-        backgroundImage: "url(/img/nav.png)",
+         backgroundColor: "#f5f6ff",
+        // backgroundImage: "url(/img/nav.png)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         border: "0px solid black",
@@ -122,7 +123,7 @@ export default function Navbar() {
         </List>
       </Box>
 
-      <Nav.Footer collapseButton={true} />
+      <Nav.Footer collapseButton={true} collapsed={true}/>
     </Nav>
   );
 }

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
   const [flag, setFlag] = useState(false);
   return (
-    <div style={{width:'180px', height:'220px',overflow:'hidden'}}>
+    <div style={{width:'20%', height:'250px',overflow:'hidden'}}>
       <ul
         style={{
           marginLeft:'10px',
@@ -20,6 +20,7 @@ const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: "cover",
           borderRadius: "20px",
+          boxShadow:"#7f7f7f 1px 1px 10px 1px",
           transition: "transform 0.3s ease", // 添加过渡效果
           cursor: "pointer", // 添加手型指针样式
         }}
@@ -36,6 +37,7 @@ const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
 
       <div
         style={{
+          marginLeft:'10px',
           marginTop: "10px",
           height: "20px",
           lineHeight: "20px",
@@ -155,8 +157,6 @@ const Homerecommend = () => {
           onClick={handlePlaylistClick}
         />
       
-     
-
     
           <PlaylistItem
             imageUrl="/img/re2.png"
