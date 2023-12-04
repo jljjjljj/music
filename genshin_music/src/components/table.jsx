@@ -17,8 +17,9 @@ import axios from "axios";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#1fcea8',
     color: theme.palette.common.white,
+    fontSize:'18px'
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
