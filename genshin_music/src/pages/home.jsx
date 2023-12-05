@@ -28,7 +28,6 @@ export default function Home() {
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
         >
-          
           <Navbar />
         </Sider>
         <Layout>
@@ -53,8 +52,6 @@ export default function Home() {
                 }}
               >
                 <Homerecommend />
-
-                
               </Box>
             </div>
           </Header>

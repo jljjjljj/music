@@ -7,26 +7,25 @@ import Carousel1 from "./Banner";
 import Tablemusic from "./table";
 import { Link } from "react-router-dom";
 
-
 const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
   const [flag, setFlag] = useState(false);
   return (
-    <div style={{width:'20%', height:'250px',overflow:'hidden'}}>
+    <div style={{ width: "20%", height: "250px", overflow: "hidden" }}>
       <ul
         style={{
-          marginLeft:'10px',
+          marginLeft: "10px",
           width: "65%",
           height: "65%",
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: "cover",
           borderRadius: "20px",
-          boxShadow:"#7f7f7f 1px 1px 10px 1px",
+          boxShadow: "#7f7f7f 1px 1px 10px 1px",
           transition: "transform 0.3s ease", // 添加过渡效果
           cursor: "pointer", // 添加手型指针样式
         }}
         onClick={onClick}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.1)"; // 鼠标悬浮时放大
+          e.currentTarget.style.transform = "scale(1.07)"; // 鼠标悬浮时放大
           setFlag(true);
         }}
         onMouseLeave={(e) => {
@@ -37,7 +36,7 @@ const PlaylistItem = ({ imageUrl, playlistName, onClick }) => {
 
       <div
         style={{
-          marginLeft:'10px',
+          marginLeft: "10px",
           marginTop: "10px",
           height: "20px",
           lineHeight: "20px",
@@ -66,19 +65,18 @@ const Homerecommend = () => {
   const [playlistDetail5, setPlaylistDetail5] = useState([]);
   const [tracks6, setTracks6] = useState([]);
 
-  const list=[
-    {imgUrl:"/img/re1.png",name:playlistDetail.name,trackState:tracks},
-    {imgUrl:"/img/re2.png",name:playlistDetail1.name,trackState:tracks2},
-    {imgUrl:"/img/re3.png",name:playlistDetail2.name,trackState:tracks3},
-    {imgUrl:"/img/re4.png",name:playlistDetail3.name,trackState:tracks4},
-    {imgUrl:"/img/re5.png",name:playlistDetail4.name,trackState:tracks5},
-    {imgUrl:"/img/re5.png",name:playlistDetail5.name,trackState:tracks6}
-  ]
+  const list = [
+    { imgUrl: "/img/re1.png", name: playlistDetail.name, trackState: tracks },
+    { imgUrl: "/img/re2.png", name: playlistDetail1.name, trackState: tracks2 },
+    { imgUrl: "/img/re3.png", name: playlistDetail2.name, trackState: tracks3 },
+    { imgUrl: "/img/re4.png", name: playlistDetail3.name, trackState: tracks4 },
+    { imgUrl: "/img/re5.png", name: playlistDetail4.name, trackState: tracks5 },
+    { imgUrl: "/img/re6.png", name: playlistDetail5.name, trackState: tracks6 },
+  ];
   // 从列表中随机选择三个元素，打乱，挑前五个
-  const shuffledList = [...list].sort(() => Math.random() - 0.5);//打乱
+  const shuffledList = [...list].sort(() => Math.random() - 0.5); //打乱
   const selectedPlaylists = shuffledList.slice(0, 5);
   const navigate = useNavigate(); // 获取 useNavigate 函数
-  
 
   useEffect(() => {
     // 构建API请求的URL
@@ -96,12 +94,18 @@ const Homerecommend = () => {
       axios.get(apiUrl2),
       axios.get(apiUrl3),
       axios.get(apiUrl4),
-      axios.get(apiUrl5)
+      axios.get(apiUrl5),
     ])
       .then((responses) => {
         // 处理API响应数据
-        const [response1, response2, response3, response4, response5,response6] =
-          responses;
+        const [
+          response1,
+          response2,
+          response3,
+          response4,
+          response5,
+          response6,
+        ] = responses;
         setPlaylistDetail(response1.data.playlist);
         setPlaylistDetail1(response2.data.playlist);
         setPlaylistDetail2(response3.data.playlist);
@@ -131,7 +135,7 @@ const Homerecommend = () => {
 
   return (
     <>
-    <Carousel1 />
+      <Carousel1 />
       <div
         style={{
           marginLeft: "35px",
@@ -147,15 +151,15 @@ const Homerecommend = () => {
         <span style={{ color: "black", marginLeft: "5px" }}>推荐</span>
       </div>
       <Container style={{ display: "flex", marginLeft: "10px" }}>
-    
-      {selectedPlaylists.map((item) => (
+        {selectedPlaylists.map((item) => (
           <PlaylistItem
             imageUrl={item.imgUrl}
             playlistName={item.name}
-            onClick={() => navigate("/songlist", { state: { tracks: item.trackState } })}
+            onClick={() =>
+              navigate("/songlist", { state: { tracks: item.trackState } })
+            }
           />
         ))}
-       
       </Container>
     </>
   );

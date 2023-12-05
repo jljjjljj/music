@@ -28,7 +28,6 @@ export default function Song_list() {
           style={{
             background: "var(--semi-color-fill-2)",
             height: "auto",
-            
           }}
           breakpoint={["md"]}
           onBreakpoint={onbreakpoint}
