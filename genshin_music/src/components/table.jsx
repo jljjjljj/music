@@ -23,12 +23,20 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
+    height:"20px",
+    backgroundColor:"#acff9121",
+    border:"0px solid black",
+    transition: "background-color 0.3s", // 添加过渡效果
+    "&:hover": {
+      
+      backgroundColor: "#fff8c3", // 悬浮时的背景颜色
+    },
   },
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    backgroundColor: theme.palette.action.hover,
+   borderTop:"2.6px dotted #1fcea8"
   },
   // hide last border
   "&:last-child td, &:last-child th": {
